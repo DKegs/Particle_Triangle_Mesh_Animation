@@ -20,7 +20,7 @@ screen.fill(backgroundColor)
 pygame.display.update()
 
 # Define how many particles will be in the animation
-particleCount = 50
+particleCount = 100
 
 
 
@@ -97,13 +97,17 @@ def main():
         
         if keys[pygame.K_SPACE]:
             particles = []
-            for i in range(particleCount):
+            particles.append(Particle(particleColor, 0, 0, 1, 0, 0))
+            particles.append(Particle(particleColor, screenXsize, 0, 1, 0, 0))
+            particles.append(Particle(particleColor, 0, screenYsize, 1, 0, 0))
+            particles.append(Particle(particleColor, screenXsize, screenYsize, 1, 0, 0))
+            for i in range(particleCount - 4):
                 particle = Particle(
                     particleColor,                  # Color
                     random.randint(0, screenXsize), # X location
                     random.randint(0, screenYsize), # Y location
                     random.randint(1,10),           # Size
-                    (random.random() / 5),          # Speed
+                    (random.random() * .25),        # Speed
                     random.uniform(0, 2 * math.pi)) # Angle
                 particles.append(particle)
                 particle.drawPoints()
@@ -130,7 +134,6 @@ def main():
                     averageYofTriangle += points[1]
                 averageYofTriangle = (averageYofTriangle / len(trinaglePoints)) * heightRatio
                 pygame.draw.polygon(screen, (0, 0, averageYofTriangle), trinaglePoints)
-
 
             for i in range(particleCount): 
                 particle = particles[i]
