@@ -10,3 +10,7 @@ Attempt #1:
 Attempt #2: (Using better mathematics (Delaunay))
 
 ![Attempt 2](https://github.com/user-attachments/assets/0385e457-c22b-471c-9ddc-61c1441668f0)
+
+Attempt #3: (Added corner points)
+
+![Attempt 3](https://github.com/user-attachments/assets/79e6af56-0e33-4ef1-8e8e-f6f99b82ee11)
